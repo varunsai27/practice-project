@@ -1,11 +1,18 @@
-name: Test Workflow
-on: workflow_dispatch
+name: Test Project
+
+on: push
+
 jobs:
- test:
-   runs-on: ubuntu-22.04
-   steps: 
-     - name: Get Code
-       uses: actions/checkout@v6
-     - name: Test
-       run: npm run test
-       
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v6
+
+      - name: Install Node JS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Test
+        run: npm test
