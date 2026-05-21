@@ -1,0 +1,11 @@
+name: Test Workflow
+on: workflow_dispatch
+jobs:
+ test:
+   runs-on: ubuntu-22.04
+   steps: 
+     - name: Get Code
+       uses: actions/checkout@v6
+     - name: Test
+       run: npm run test
+       
