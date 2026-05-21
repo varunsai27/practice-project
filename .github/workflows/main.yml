@@ -22,7 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
-	uses: actions/checkout@v6
+        uses: actions/checkout@v6
+
       - name: Run Build
         run: | 
 	   npm run build
