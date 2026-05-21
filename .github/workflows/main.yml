@@ -25,6 +25,11 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v6
+      
+      - name: Install Node JS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
       - name: Run Build and Deploy
         run: |
